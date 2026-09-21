@@ -8,10 +8,10 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 module.exports = {
   mode: "production",
 
-  entry: "./src/app.js",
+  entry: "./src/js/main.js",
 
   output: {
-    filename: "JS/app-[contenthash].js",
+    filename: "js/main-[contenthash].js",
     path: path.resolve(__dirname, "./dist"),
   },
 
@@ -22,11 +22,11 @@ module.exports = {
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "CSS/style-[contenthash].css",
+      filename: "css/styles-[contenthash].css",
     }),
 
     new HtmlWebpackPlugin({
-      template: "index.html",
+      template: "./src/index.html",
     }),
 
     new CleanWebpackPlugin(),
