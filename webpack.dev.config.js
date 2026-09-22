@@ -2,11 +2,12 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
   mode: "development",
 
-  entry: "./src/js/main.js",
+  entry: "./src/main.js",
 
   output: {
     filename: "js/main-[contenthash].js",
@@ -30,10 +31,12 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./index.html",
     }),
 
     new CleanWebpackPlugin(),
+
+    new VueLoaderPlugin(),
   ],
 
   module: {
@@ -56,6 +59,11 @@ module.exports = {
       {
         test: /\.(eot|ttf|woff|woff2)$/i,
         type: "asset/inline",
+      },
+
+      {
+        test: /\.vue$/,
+        loader: "vue-loader",
       },
     ],
   },
