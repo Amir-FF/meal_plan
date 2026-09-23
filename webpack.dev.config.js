@@ -31,7 +31,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: "./index.html",
+      template: "./public/index.html",
     }),
 
     new CleanWebpackPlugin(),
@@ -58,7 +58,10 @@ module.exports = {
 
       {
         test: /\.(eot|ttf|woff|woff2)$/i,
-        type: "asset/inline",
+        type: "asset/resource",
+        generator: {
+          filename: "fonts/[name]-[contenthash]",
+        },
       },
 
       {

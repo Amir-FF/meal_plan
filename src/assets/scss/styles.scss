@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "Vazir";
+  src: url("./../fonts/Vazir.eot");
+  /* IE9 Compat Modes */
+  src:
+    url("./../fonts/Vazir.eot?#iefix") format("embedded-opentype"),
+    url("./../fonts/Vazir.woff2") format("woff2"),
+    url("./../fonts/Vazir.woff") format("woff"),
+    url("./../fonts/Vazir.ttf") format("truetype");
+  /* Safari, Android, iOS */
+}
+
+* {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body {
+  background-color: var(--bs-light);
+  color: var(--bs-dark);
+  background-blend-mode: screen, screen, screen, normal;
+  background-image:
+    radial-gradient(circle at 18% 16%, oklch(82% 0.18 295 / 0.42), #0000 0 22%),
+    radial-gradient(circle at 82% 12%, oklch(78% 0.16 315 / 0.3), #0000 0 20%),
+    radial-gradient(
+      circle at 50% 108%,
+      oklch(68% 0.18 285 / 0.34),
+      #0000 0 34%
+    ),
+    linear-gradient(
+      135deg,
+      oklch(98.5% 0.03 290) 0%,
+      oklch(94.5% 0.06 292) 34%,
+      oklch(86% 0.12 297) 68%,
+      oklch(72% 0.18 301) 100%
+    );
+  background-size: auto;
+  background-attachment: fixed;
+  height: 100vh;
+  font-family: "Vazir" !important;
+}
+
+.container {
+  max-width: 36rem !important;
+  margin: 0 auto !important;
+}
+
+form {
+  .row {
+    box-shadow: 0 0 0 3px rgba(110, 70, 220, 0.08);
+    backdrop-filter: blur(4px);
+    transition: all 300ms ease;
+
+    input {
+      background-color: transparent;
+      height: 44px;
+    }
+    input:focus {
+      background-color: transparent;
+      outline: none;
+    }
+
+    input::placeholder {
+      color: #999;
+    }
+
+    button {
+      width: 0;
+      height: 44px !important;
+      margin-right: 6px !important;
+      color: #fff !important;
+      background-color: #7048e8 !important;
+      cursor: pointer !important;
+      opacity: 0;
+      box-shadow: 0 4px 10px rgba(112, 72, 232, 0.25) !important;
+      transition: 0.5s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 14px rgba(112, 72, 232, 0.3);
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+form:hover button {
+  width: 44px;
+}
