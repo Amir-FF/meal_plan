@@ -1,3 +1,7 @@
+$width-box: 44px;
+$box-shadow: 0 0 0 3px rgba(110, 70, 220, 0.08);
+$backdrop-filter: blur(4px);
+
 @font-face {
   font-family: "Vazir";
   src: url("./../fonts/Vazir.eot");
@@ -47,13 +51,11 @@ body {
 
 form {
   .row {
-    box-shadow: 0 0 0 3px rgba(110, 70, 220, 0.08);
-    backdrop-filter: blur(4px);
-    transition: all 300ms ease;
+    outline: 1px solid rgba(110, 70, 220, 0.08);
 
     input {
       background-color: transparent;
-      height: 44px;
+      height: $width-box;
     }
     input:focus {
       background-color: transparent;
@@ -64,29 +66,61 @@ form {
       color: #999;
     }
 
-    button {
+    .btn-add-plus {
       width: 0;
-      height: 44px !important;
+      height: $width-box !important;
       margin-right: 6px !important;
       color: #fff !important;
       background-color: #7048e8 !important;
-      cursor: pointer !important;
+      cursor: default;
       opacity: 0;
       box-shadow: 0 4px 10px rgba(112, 72, 232, 0.25) !important;
       transition: 0.5s ease;
     }
 
-    button:hover {
+    .addPlus {
+      width: $width-box !important;
+      opacity: 1 !important;
+      cursor: pointer !important;
+    }
+
+    .addPlus:hover {
       transform: scale(1.05);
       box-shadow: 0 6px 14px rgba(112, 72, 232, 0.3);
     }
 
-    button:active {
+    .addPlus:active {
       transform: scale(0.95);
     }
   }
+
+  .boxShadow {
+    box-shadow: $box-shadow;
+    backdrop-filter: $backdrop-filter;
+    transition: 0.25s ease;
+  }
 }
 
-form:hover button {
-  width: 44px;
+ul li {
+  outline: 1px solid rgba(110, 70, 220, 0.08);
+
+  .delete {
+    color: #dc3545;
+    background-color: transparent !important;
+    border: none;
+  }
+
+  .delete:hover {
+    color: #bb2d3b;
+    -webkit-appearance: none !important;
+  }
+
+  .delete:active {
+    color: #b02a37;
+  }
+}
+
+.w-h {
+  width: 100px;
+  height: 30px;
 }
